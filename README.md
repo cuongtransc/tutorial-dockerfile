@@ -185,11 +185,15 @@ docker-compose up
 ```
 
 **Load balancing: Round Robin**
+
 http://web-counter.coclab.lan/
+
 http://web-counter.coclab.lan/server-name
 
 **Load balancing: Stick**
+
 http://stick.web-counter.coclab.lan/
+
 http://stick.web-counter.coclab.lan/server-name
 
 
@@ -198,7 +202,7 @@ http://stick.web-counter.coclab.lan/server-name
 https://docs.docker.com/articles/dockerfile_best-practices/
 
 ## Caching everywhere
-- Caching everywhere.
+- Caching software packages and third-party source code.
 - Dockerfile có 1 phiên bản cho lab và 1 phiên cho product.
 Với phiên bản cho lab, tối thiểu hóa "thời gian phải chờ".
 Ví dụ: thời gian phải chờ khi thực hiện update repo: apt-get update
