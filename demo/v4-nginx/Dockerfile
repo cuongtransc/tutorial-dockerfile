@@ -15,7 +15,7 @@ FROM ubuntu:14.04
 MAINTAINER Tran Huu Cuong "tranhuucuong91@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
-RUN echo 'Acquire::http::Proxy "http://172.17.42.1:3142/";' >> /etc/apt/apt.conf.d/01proxy
+RUN echo 'Acquire::http::Proxy "http://172.17.42.1:3142/";' > /etc/apt/apt.conf.d/01proxy
 
 COPY build-nginx /tmp/build-nginx
 RUN DEBIAN_FRONTEND=noninteractive bash /tmp/build-nginx/build-nginx-ubuntu-14.04.sh
