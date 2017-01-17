@@ -26,7 +26,8 @@ MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
 # using apt-cacher-ng proxy for caching deb package
 #RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
 
-RUN apt-get install -y nginx
+RUN apt-get update -qq \
+    && apt-get install -y nginx
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
@@ -73,6 +74,8 @@ MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
 #RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
+
+RUN apt-get update -qq
 
 RUN apt-get update -qq \
     && apt-get install -y nginx
