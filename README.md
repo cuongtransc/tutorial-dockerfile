@@ -20,11 +20,11 @@ Based on https://blog.docker.com/2015/04/docker-tutorial-6-dockerfile-part-1/, t
 ## v1: Basic command FROM, RUN, CMD
 
 ```dockerfile
-FROM ubuntu:14.04
-MAINTAINER Tran Huu Cuong "tranhuucuong91@gmail.com"
+FROM ubuntu:16.04
+MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
-RUN echo 'Acquire::http::Proxy "http://172.17.42.1:3142/";' > /etc/apt/apt.conf.d/01proxy
+#RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
 
 RUN apt-get install -y nginx
 
@@ -68,11 +68,11 @@ find / -name index.html
 ## v2: Command COPY and EXPOSE
 
 ```dockerfile
-FROM ubuntu:14.04
-MAINTAINER Tran Huu Cuong "tranhuucuong91@gmail.com"
+FROM ubuntu:16.04
+MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
-RUN echo 'Acquire::http::Proxy "http://172.17.42.1:3142/";' > /etc/apt/apt.conf.d/01proxy
+#RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
 
 RUN apt-get update -qq \
     && apt-get install -y nginx
@@ -112,11 +112,11 @@ docker stop $cid && docker rm $cid
 
 ## v3: Command VOLUME
 ```dockerfile
-FROM ubuntu:14.04
-MAINTAINER Tran Huu Cuong "tranhuucuong91@gmail.com"
+FROM ubuntu:16.04
+MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
-RUN echo 'Acquire::http::Proxy "http://172.17.42.1:3142/";' > /etc/apt/apt.conf.d/01proxy
+#RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
 
 RUN apt-get update -qq \
     && apt-get install -y nginx
@@ -143,12 +143,11 @@ docker run -it --rm -p 80:80 -v $(pwd)/data_web:/usr/share/nginx/html test/nginx
 
 ## v4: Final Dockerfile
 ```dockerfile
-
-FROM ubuntu:14.04
-MAINTAINER Tran Huu Cuong "tranhuucuong91@gmail.com"
+FROM ubuntu:16.04
+MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
-RUN echo 'Acquire::http::Proxy "http://172.17.42.1:3142/";' > /etc/apt/apt.conf.d/01proxy
+#RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
 
 COPY build-nginx /tmp/build-nginx
 RUN DEBIAN_FRONTEND=noninteractive bash /tmp/build-nginx/build-nginx-ubuntu-14.04.sh
