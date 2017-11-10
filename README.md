@@ -21,7 +21,7 @@ Based on https://blog.docker.com/2015/04/docker-tutorial-6-dockerfile-part-1/, t
 
 ```dockerfile
 FROM ubuntu:16.04
-MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
+MAINTAINER Cuong Tran "cuongtransc@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
 #RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
@@ -70,7 +70,7 @@ find / -name index.html
 
 ```dockerfile
 FROM ubuntu:16.04
-MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
+MAINTAINER Cuong Tran "cuongtransc@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
 #RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
@@ -116,7 +116,7 @@ docker stop $cid && docker rm $cid
 ## v3: Command VOLUME
 ```dockerfile
 FROM ubuntu:16.04
-MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
+MAINTAINER Cuong Tran "cuongtransc@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
 #RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
@@ -147,7 +147,7 @@ docker run -it --rm -p 80:80 -v $(pwd)/data_web:/usr/share/nginx/html test/nginx
 ## v4: Final Dockerfile
 ```dockerfile
 FROM ubuntu:16.04
-MAINTAINER Cuong Tran "tranhuucuong91@gmail.com"
+MAINTAINER Cuong Tran "cuongtransc@gmail.com"
 
 # using apt-cacher-ng proxy for caching deb package
 #RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142/";' > /etc/apt/apt.conf.d/01proxy
